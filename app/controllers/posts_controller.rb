@@ -136,9 +136,11 @@ class PostsController < ApplicationController
   end
 
   def raw_presenter(post)
-    header = "#{post.title} by #{post.developer_username} -- #{post.display_date.strftime("%B %-e, %Y")}"
+    title = post.title
     body = post.body
+    author = post.developer_username
+    date = post.display_date.strftime("%B %-e, %Y")
 
-    header + "\n\n" + body
+    title + "\n\n" + body + "\n\n" + author + "\n" + date
   end
 end

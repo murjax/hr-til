@@ -73,7 +73,7 @@ describe PostsController do
 
       get :show, titled_slug: raw_post.to_param, format: 'md'
 
-      expected = "Plaintext Title by jackdonaghy -- January 1, 2016\n\nRaw content here"
+      expected = "Plaintext Title\n\nRaw content here\n\njackdonaghy\nJanuary 1, 2016"
       expect(response.body).to eq expected
     end
   end
